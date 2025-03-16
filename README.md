@@ -19,3 +19,22 @@ First, I modify the SimpleNN model by replacing the nn.Conv2d and nn.Linear laye
 Next, I analyze the input and output shapes of each layer, including the feature maps and weight tensors for convolutional and fully connected layers. Using a loop, I extract and print these shapes, then compute the total number of parameters and MACs in each layer. These results will be recorded in Table 2 for further analysis.
 
 Additionally, an optional bonus task involves plotting histograms of weight elements and gradients, performing a backward pass, and comparing gradient distributions when weights are set to zero. This will help understanding weight initialization effects and training dynamics.
+
+# SimpleNN for CIFAR-10 classification
+In this project, I implemented and trained a Simple Neural Network (SimpleNN) for CIFAR-10 classification using PyTorch. The model consists of two convolutional layers, two max-pooling layers, and three fully connected (FC) layers. My main tasks included verifying the model's implementation, preparing the dataset, setting up the training pipeline, and analyzing the training performance.
+
+First, I checked the model's implementation by passing dummy inputs and verifying the output shapes to ensure correctness. Then, I processed the CIFAR-10 dataset by applying preprocessing steps such as normalization and transformation to prepare the images for training. Instead of using the standard torchvision.datasets, I used a custom CIFAR-10 dataset class from tools.dataset.
+
+Next, I set up an efficient data loading pipeline using torch.utils.data.DataLoader and deployed the model on a GPU for faster training. To ensure the model was running on the GPU, I used the nvidia-smi command. After that, I defined the loss function and optimizer, which are crucial for training, and configured the training loop with the given hyperparameters.
+
+During training, I monitored training and validation accuracy to evaluate model performance. Finally, I experimented with learning rate decay to observe its impact on accuracy compared to a fixed learning rate
+
+Then, I improved the training pipeline for CIFAR-10 classification by implementing data augmentation, modifying the model architecture, and tuning hyperparameters. The goal was to enhance model performance and achieve at least 70% validation accuracy.
+
+First, I applied data augmentation techniques, including random cropping with padding and random flipping, to help prevent overfitting. I then compared the validation accuracy of the model trained with and without augmentation.
+
+Next, I modified the SimpleNN model design by adding batch normalization (BN) layers after each convolutional layer to stabilize training and allow a larger learning rate. I then empirically evaluated how batch normalization affects accuracy and learning rate. Additionally, I replaced all ReLU activations with Swish and observed whether Swish improved performance.
+
+Finally, I tuned hyperparameters to further optimize the model. I experimented with different learning rates (from 1.0 to 0.001) to analyze their impact on training performance. I also tested different L2 regularization strengths to see how weight decay affects accuracy. Additionally, I switched from L2 to L1 regularization, manually adding L1 loss to the training function, and compared the distribution of weight parameters between L1 and L2 regularization.
+
+Through these improvements, I developed a more robust training pipeline for CIFAR-10 classification.
