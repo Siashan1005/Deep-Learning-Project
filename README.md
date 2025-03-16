@@ -20,7 +20,7 @@ Next, I analyze the input and output shapes of each layer, including the feature
 
 Additionally, an optional bonus task involves plotting histograms of weight elements and gradients, performing a backward pass, and comparing gradient distributions when weights are set to zero. This will help understanding weight initialization effects and training dynamics.
 
-# SimpleNN for CIFAR-10 classification
+# SimpleNN for CIFAR-10 classification + update more robust version
 In this project, I implemented and trained a Simple Neural Network (SimpleNN) for CIFAR-10 classification using PyTorch. The model consists of two convolutional layers, two max-pooling layers, and three fully connected (FC) layers. My main tasks included verifying the model's implementation, preparing the dataset, setting up the training pipeline, and analyzing the training performance.
 
 First, I checked the model's implementation by passing dummy inputs and verifying the output shapes to ensure correctness. Then, I processed the CIFAR-10 dataset by applying preprocessing steps such as normalization and transformation to prepare the images for training. Instead of using the standard torchvision.datasets, I used a custom CIFAR-10 dataset class from tools.dataset.
