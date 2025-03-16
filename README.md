@@ -10,3 +10,12 @@ After training, I visualized the dataset and the learned models by plotting a 3D
 Finally, analyze how the learning rate (r) affects training by repeating the LMS process with different values of r (0.01, 0.05, 0.1, and 0.5). and track the MSE loss for each case and interpret the impact of learning rate choices. Additionally, you will test an extreme case with r = 1 to observe its effect on training stability.
 
 This lab will helping understand both the theoretical and practical aspects of the LMS algorithm, including optimization, convergence behavior, and the impact of hyperparameter tuning.
+
+# Simple NN
+I implement and analyze a Simple Neural Network (Simple NN) model using PyTorch. The model consists of three convolutional layers, three max-pooling layers, and two fully connected (FC) layers. Your main tasks involve defining the neural network, analyzing the shape of each layer, and computing key metrics such as the number of parameters and Multiply-Accumulate Operations (MACs).
+
+First, I modify the SimpleNN model by replacing the nn.Conv2d and nn.Linear layers with customized PyTorch classes. This ensures that the implementation aligns with PyTorch’s built-in structures while maintaining flexibility. After modifying the model, I need to verify that it runs correctly by passing a sample input without errors.
+
+Next, I analyze the input and output shapes of each layer, including the feature maps and weight tensors for convolutional and fully connected layers. Using a loop, I extract and print these shapes, then compute the total number of parameters and MACs in each layer. These results will be recorded in Table 2 for further analysis.
+
+Additionally, an optional bonus task involves plotting histograms of weight elements and gradients, performing a backward pass, and comparing gradient distributions when weights are set to zero. This will help understanding weight initialization effects and training dynamics.
